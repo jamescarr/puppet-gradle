@@ -1,0 +1,6 @@
+Puppet Module for Gradle
+
+Downloads and installs Gradle
+
+Requires JDK and puppet-archive
+
