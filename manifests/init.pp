@@ -25,7 +25,7 @@ class gradle {
     ensure	=> link,
 	target	=> "/usr/share/$version",
 	owner	=> root, group	=> root,
-	require	=> Archive['gradle'],
+	require	=> Archive["$version"],
   }
 
   file { '/etc/profile.d/gradle.sh':
