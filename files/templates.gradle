@@ -1,0 +1,9 @@
+initscript {
+  dependencies {
+    classpath files('/usr/share/gradle/lib/plugins/templates-1.2.jar')
+  }
+}
+
+gradle.beforeProject { prj ->
+   prj.apply plugin: templates.TemplatesPlugin
+}
