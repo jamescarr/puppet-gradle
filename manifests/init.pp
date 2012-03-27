@@ -6,7 +6,7 @@
 class gradle {
   include 'openjdk'
 
-  $version = 'gradle-1.0-milestone-8a'
+  $version = 'gradle-1.0-milestone-9'
   
   Exec {
 	path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
