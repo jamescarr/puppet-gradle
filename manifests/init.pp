@@ -34,22 +34,4 @@ class gradle {
 	source	=> 'puppet:///modules/gradle/gradle.sh',
 	owner	=> root, group	=> root,
   }
-  
-  # Templates Plugin
-  archive::download {"templates-1.2.jar":
-    ensure => present,
-    url => "https://launchpad.net/gradle-templates/trunk/1.2/+download/templates-1.2.jar",
-    checksum => false,
-    src_target => "/usr/share/gradle/lib/plugins",
-    allow_insecure => false,
-    require File['/usr/share/gradle'],
-  }
-
-  file { '/usr/share/gradle/init.d/templates.gradle':
-    ensure => file,
-    mode => 644,
-    source => 'puppet:///modules/gradle/templates.gradle',
-    owner => root, group => root,
-    require File['/usr/share/gradle'],
-  }
 }
