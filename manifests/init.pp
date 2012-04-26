@@ -34,4 +34,19 @@ class gradle {
 	source	=> 'puppet:///modules/gradle/gradle.sh',
 	owner	=> root, group	=> root,
   }
+  
+  # Prototypes Plugin
+  archive::download { 'prototypes.jar':
+	url => 'https://github.com/downloads/myrontuttle/gradle-prototypes/prototypes.jar',
+	ensure => present,
+	src_target => '/usr/share/gradle/lib/plugins',
+	require => File['/usr/share/gradle']
+  }
+  
+  archive::download { 'prototypes.gradle':
+	url => 'https://github.com/downloads/myrontuttle/gradle-prototypes/prototypes.gradle',
+	ensure => present,
+	src_target => '/usr/share/gradle/init.d',
+	require => Archive::Download['prototypes.jar']
+  }
 }
